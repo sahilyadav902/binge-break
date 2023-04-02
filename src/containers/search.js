@@ -13,7 +13,7 @@ export default function Search({
   //Fetch search results
   async function getSearchResults() {
     if (searchTerm) {
-      let apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}&sort_by=popularity.desc`;
+      let apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}&sort_by=popularity.desc&include_adult=false`;
       let res = await fetch(apiUrl);
       const data = await res.json();
       setSearchResults(data.results);

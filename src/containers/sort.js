@@ -44,7 +44,7 @@ export default function Sort({ setFilterResults }) {
     const { year, genre, rating } = filters;
 
     //Construct the API URL with the selected filters
-    let apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc`;
+    let apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&sort_by=popularity.desc&include_adult=false`;
     if (year) {
       apiUrl += `&primary_release_year=${year}`;
     }

@@ -7,17 +7,17 @@ import Search from "@/containers/search";
 import Card from "@/components/card";
 import Nav from "@/components/nav";
 
+var currentPage = 1;
 export default function Home({ popularMovies }) {
   const [movies, setMovies] = useState(popularMovies);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const apiKey = process.env.TMD_API_KEY;
-  var currentPage = 1;
 
   //Fetch more movies for homepage
   const onLoadMore = async () => {
     currentPage = currentPage + 1;
-    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${currentPage}`;
+    const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${currentPage}&include_adult=false`;
     const res = await fetch(apiUrl);
     const data = await res.json();
     setMovies((movies) => [...movies, ...data.results]);
@@ -63,7 +63,7 @@ export default function Home({ popularMovies }) {
 //Fetch static props for application build
 export async function getStaticProps() {
   const apiKey = process.env.TMD_API_KEY;
-  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=1`;
+  const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=1&include_adult=false`;
   const res = await fetch(apiUrl);
   const output = await res.json();
   const data = JSON.parse(JSON.stringify(output));

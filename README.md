@@ -1,38 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Binge Break
 
-## Getting Started
+(Responsive Next.js Movie Database Website)
 
-First, run the development server:
+![Binge Break](https://i.ibb.co/3vNCyjm/Binge-Break.png)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Link to Live Project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> [https://binge-break.vercel.app/](https://binge-break.vercel.app/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Setting up the project locally
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- Clone the project through the terminal:
+  > git clone https://github.com/sahilyadav902/binge-break.git
+- Navigate to the project directory:
+  > cd binge-break
+- Install dependencies
+  > npm install
+- Run the development build
+  > npm run dev
+- Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Techstack Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Next.js
+- React.js
+- Tailwind (CSS Framework)
+- TMDB API (Movies API)
+- Isomorphic Unfetch (HTTP Requests)
+- DaisyUI (Tailwind CSS Components)
+- React Icons (npm package)
+- react-infinite-scroll-component (npm package)
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- index.js directs to homepage which gets static props for the first 20 movies
+- filter.js directs to '/filter' page where user can apply filters based on release year, genre and average rating
+- [movieID].js redirects to '/movie/{movieID}' page where user can view various details related to the movie selected including cast, similar movies and more movies from the director
+- public directory contains static images and src directory contains all the code files
+- pages directory inside src contains all the files for client side navigation
+- styles directory contains a global.css file containing some custom styling for the components
+- components directory contains reusable or isolated components that are used inside the project
+- containers directory contains segments of code that are needed to perform data fetching
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features Implemented
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Hero Section on landing at homepage
+- Floating Navigation Bar at the bottom with Blur Background effect and Tooltip on hover
+- Responsive Grid Layout to display movie cards
+- Highlight effect on hovering over movie cards
+- Infinite scrolling on the homepage
+- Sticky Search Bar with instant results
+- Lazy Loading of Images using Image component in Next.js
+- Custom Fallback Image Cards for movies with missing posters
+- Sticky Filter Bar with Blur Background effect
+- Dynamic Routing for individual Movie detail pages
+- Responsive Layout for Movie Details
+- Horizontal Scrollable Carousel to display Cast, Similar Movies and more movies from the same Directors
+- Open Google Search for Cast member upon clicking on the card
+- Highlight Shadow effect on hovering over Carousel Items
+- Clickable movie cards that navigate to movie details page

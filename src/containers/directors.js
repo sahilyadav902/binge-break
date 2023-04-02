@@ -8,7 +8,7 @@ export default function Directors({ directorIds, directors }) {
 
   //Fetch movies of a single director
   async function getMoviesByDirector(directorId) {
-    let apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_crew=${directorId}&sort_by=popularity.desc`;
+    let apiUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_crew=${directorId}&sort_by=popularity.desc&include_adult=false`;
     let res = await fetch(apiUrl);
     const data = await res.json();
     return data.results;

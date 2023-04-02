@@ -18,7 +18,7 @@ export default function Movie({}) {
 
   //Fetch movie data and cast
   async function fetchMovie() {
-    let apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
+    let apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&include_adult=false`;
     let res = await fetch(apiUrl);
     let data = await res.json();
     setMovie(data);
@@ -31,7 +31,7 @@ export default function Movie({}) {
 
   //Fetch similar movies
   async function getSimilarMovies() {
-    let apiUrl = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${apiKey}`;
+    let apiUrl = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${apiKey}&include_adult=false`;
     let res = await fetch(apiUrl);
     let data = await res.json();
     setSimilarMovies(data.results);
