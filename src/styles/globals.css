@@ -11,7 +11,7 @@ body {
 
 /* Hero Section Background */
 #hero-image {
-  background-image: url("../assets/movieCollage.jpg");
+  background-image: url("/movieCollage.jpg");
   background-position: center;
   z-index: -1;
 }
