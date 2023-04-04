@@ -6,7 +6,7 @@
 
 ## Link to Live Project
 
-> [https://binge-break.vercel.app/](https://binge-break.vercel.app/)
+> [https://binge-break.netlify.app/](https://binge-break.netlify.app/)
 
 ## Setting up the project locally
 
